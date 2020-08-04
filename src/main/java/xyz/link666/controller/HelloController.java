@@ -13,4 +13,9 @@ public class HelloController {
     public String  hello() {
         return "Hello mother fucker666888";
     }
+
+    //@RequestMapping("/")
+    //public String index(){
+    //    return "/index";
+    //}
 }
