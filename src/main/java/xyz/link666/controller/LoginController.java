@@ -23,7 +23,7 @@ public class LoginController {
                         Model model,
                         HttpSession session) {
         if (username != null && "666".equals(password)) {
-            System.out.println();
+            session.setAttribute("loginUser",username);
             return "redirect:/main.html";
         }
         model.addAttribute("msg","用户名或密码错误，登录失败");
