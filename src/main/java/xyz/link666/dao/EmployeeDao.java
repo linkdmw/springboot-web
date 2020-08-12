@@ -48,7 +48,7 @@ public class EmployeeDao {
     /**
      * @return 查询全部
      */
-    public Collection<Employee> getAllEmployees() {
+    public Collection<Employee> selectAllEmployees() {
         return eployeeMap.values();
     }
 
