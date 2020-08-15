@@ -40,6 +40,10 @@ public class DepartmentDao {
         return departmentMap.get(id);
     }
 
+    public Collection<Department> selectAllDepartment(){
+        return departmentMap.values();
+    }
+
     public void addDepartment(Department department){
         departmentMap.put(ID++,department);
     }

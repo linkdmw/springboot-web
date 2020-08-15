@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<!-- saved from url=(0052)http://getbootstrap.com/docs/4.0/examples/dashboard/ -->
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>添加员工</title>
+    <!-- Bootstrap core CSS -->
+    <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link th:href="@{/css/dashboard.css}" rel="stylesheet">
+    <style type="text/css">
+        /* Chart.js */
+
+        @-webkit-keyframes chartjs-render-animation {
+            from {
+                opacity: 0.99
+            }
+            to {
+                opacity: 1
+            }
+        }
+
+        @keyframes chartjs-render-animation {
+            from {
+                opacity: 0.99
+            }
+            to {
+                opacity: 1
+            }
+        }
+
+        .chartjs-render-monitor {
+            -webkit-animation: chartjs-render-animation 0.001s;
+            animation: chartjs-render-animation 0.001s;
+        }
+    </style>
+</head>
+<body>
+<div th:replace="~{commons/common::topBar}"></div>
+
+<div class="container-fluid">
+    <div class="row">
+        <div th:replace="~{commons/common::sideBar(active='list.html')}"></div>
+        <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
+<form th:action="@{/addEmployee}" method="post">
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label for="user-name-label">姓名</label>
+            <input type="text" class="form-control" id="user-name-label" name="name">
+        </div>
+        <div class="form-group">
+            <label for="gender">性别</label>
+            <select id="gender" name="gender" class="form-control">
+                <option selected value="-1">请选择性别</option>
+                <option value="1">男</option>
+                <option value="0">女</option>
+            </select>
+        </div>
+
+    </div>
+    <div class="form-group">
+        <label for="inputEmail4">Email</label>
+        <input type="email" class="form-control" id="inputEmail4" name="email">
+    </div>
+    <div class="form-group">
+        <label for="department">部门</label>
+        <select id="department" class="form-control" name="department.id">
+            <option selected value="-1">请选择部门</option>
+            <option th:each="depa:${departments}" th:text="${depa.getDepartmentName()}" th:value="${depa.getId()}"></option>
+        </select>
+    </div>
+<!--    <div class="form-row">-->
+        <div class="form-group">
+            <label for="birthday">生日</label>
+            <input type="text" class="form-control" id="birthday" name="birthday" placeholder="使用斜杠分割，例如：1998/6/18">
+        </div>
+<!--        <div class="form-group col-md-4">-->
+<!--            <label for="inputState">State</label>-->
+<!--            <select id="inputState" class="form-control">-->
+<!--                <option selected>Choose...</option>-->
+<!--                <option>...</option>-->
+<!--            </select>-->
+<!--        </div>-->
+<!--        <div class="form-group col-md-2">-->
+<!--            <label for="inputZip">Zip</label>-->
+<!--            <input type="text" class="form-control" id="inputZip">-->
+<!--        </div>-->
+<!--    </div>-->
+<!--    <div class="form-group">-->
+<!--        <div class="form-check">-->
+<!--            <input class="form-check-input" type="checkbox" id="gridCheck">-->
+<!--            <label class="form-check-label" for="gridCheck">-->
+<!--                Check me out-->
+<!--            </label>-->
+<!--        </div>-->
+<!--    </div>-->
+    <button type="submit" class="btn btn-primary">提交</button>
+</form>
+        </main>
+    </div>
+</div>
+</body>
+
+
+</html>

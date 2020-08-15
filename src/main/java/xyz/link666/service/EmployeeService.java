@@ -13,4 +13,8 @@ import java.util.Collection;
 
 public interface EmployeeService {
     Collection<Employee> getAllEmployees();
+
+    void addEmployee(Employee employee);
+
+    Employee getEmployeeById(Integer id);
 }

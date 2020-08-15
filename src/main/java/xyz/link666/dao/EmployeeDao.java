@@ -26,17 +26,17 @@ public class EmployeeDao {
     private static int initId = 1005;
 
     static {
-        eployeeMap.put(1001, new Employee("AA", 101, "cxwl.A@qq.com", 0, new Date(), new Department(1001, "办公部")));
-        eployeeMap.put(1002, new Employee("BB", 102, "cxwl.B@qq.com", 1, new Date(), new Department(1002, "劳务部")));
-        eployeeMap.put(1003, new Employee("CC", 103, "cxwl.C@qq.com", 0, new Date(), new Department(1003, "技术部")));
-        eployeeMap.put(1004, new Employee("DD", 104, "cxwl.D@qq.com", 1, new Date(), new Department(1004, "人事部")));
+        eployeeMap.put(101, new Employee("AA", 101, "cxwl.A@qq.com", 0, new Date(), new Department(1001, "办公部")));
+        eployeeMap.put(102, new Employee("BB", 102, "cxwl.B@qq.com", 1, new Date(), new Department(1002, "劳务部")));
+        eployeeMap.put(103, new Employee("CC", 103, "cxwl.C@qq.com", 0, new Date(), new Department(1003, "技术部")));
+        eployeeMap.put(104, new Employee("DD", 104, "cxwl.D@qq.com", 1, new Date(), new Department(1004, "人事部")));
     }
 
 
     /**
      * @param employee 新增员工
      */
-    public void addEmployee(Employee employee) {
+    public void insertEmployee(Employee employee) {
         if (employee.getId() == null) {
             employee.setId(initId++);
         }
@@ -65,6 +65,10 @@ public class EmployeeDao {
      * @return 按id查询员工
      */
     public Employee findEmployeeById(Integer id){
+        return eployeeMap.get(id);
+    }
+
+    public Employee selectEmployeeById(Integer id) {
         return eployeeMap.get(id);
     }
 }
