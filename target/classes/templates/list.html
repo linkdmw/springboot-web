@@ -74,7 +74,7 @@
 								<td th:text="${emp.getEmail()}"></td>
 								<td>
 									<a class="btn btn-sm btn-primary" th:href="@{/toUpdateEmp/}+${emp.getId()}">编辑</a>
-									<a class="btn btn-sm btn-danger">删除</a>
+									<a class="btn btn-sm btn-danger" th:href="@{/deleteEmp/}+${emp.getId()}">删除</a>
 								</td>
 							</tr>
 

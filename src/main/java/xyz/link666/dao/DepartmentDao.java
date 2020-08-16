@@ -1,5 +1,6 @@
 package xyz.link666.dao;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import xyz.link666.pojo.Department;
 

@@ -47,8 +47,9 @@
     <div class="row">
         <div th:replace="~{commons/common::sideBar(active='list.html')}"></div>
         <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
-            <form th:action="@{/addEmployee}" method="post">
+            <form th:action="@{/updateEmp}" method="post">
                 <div class="form-row">
+                    <input hidden name="id" th:value="${emp.getId()}">
                     <div class="form-group col-md-6">
                         <label for="user-name-label">姓名</label>
                         <input type="text" th:value="${emp.getName()}" class="form-control" id="user-name-label" name="name" >
@@ -70,7 +71,7 @@
                     <label for="department">部门</label>
                     <select id="department" class="form-control" name="department.id">
                         <option selected value="-1">请选择部门</option>
-                        <option th:each="depa:${departments}" th:text="${depa.getDepartmentName()}" th:value="${depa.getId()}" th:selected="${emp.getDepartment().getId()==depa.getId()}"></option>
+                        <option  th:each="depa:${departments}" th:text="${depa.getDepartmentName()}" th:value="${depa.getId()}" th:selected="${emp.getDepartment().getId()==depa.getId()}"></option>
                     </select>
                 </div>
                 <!--    <div class="form-row">-->

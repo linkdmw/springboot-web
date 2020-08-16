@@ -5,6 +5,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import xyz.link666.pojo.Department;
 import xyz.link666.pojo.Employee;
@@ -39,6 +40,11 @@ public class EmployeeController {
         return "redirect:/emp/getAllEmployees";
     }
 
+    /**
+     * @param id
+     * @param model
+     * @return 跳转到更新页面
+     */
     @GetMapping("toUpdateEmp/{id}")
     public String toUpdateEmp(@PathVariable("id")Integer id,Model model){
         Employee employee = employeeService.getEmployeeById(id);
@@ -46,5 +52,21 @@ public class EmployeeController {
         model.addAttribute("emp",employee);
         model.addAttribute("departments",departments);
         return "updateEmployee";
+    }
+
+    /**
+     * @param employee
+     * @return 更新并跳回首页
+     */
+    @PostMapping("updateEmp")
+    public String updateEmp(Employee employee){
+        employeeService.updateEmp(employee);
+        return  "redirect:/emp/getAllEmployees";
+    }
+
+    @GetMapping("deleteEmp/{id}")
+    public String deleteEmp(@PathVariable("id") Integer id){
+        employeeService.deleteEmp(id);
+        return  "redirect:/emp/getAllEmployees";
     }
 }

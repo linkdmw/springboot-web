@@ -23,7 +23,7 @@ public class EmployeeDao {
     DepartmentDao departmentDao;
 
     private static Map<Integer, Employee> eployeeMap = new HashMap<Integer, Employee>();
-    private static int initId = 1005;
+    private static int initId = 105;
 
     static {
         eployeeMap.put(101, new Employee("AA", 101, "cxwl.A@qq.com", 0, new Date(), new Department(1001, "办公部")));
@@ -68,7 +68,21 @@ public class EmployeeDao {
         return eployeeMap.get(id);
     }
 
+
+    /**
+     * @param id
+     * @return 按id
+     */
     public Employee selectEmployeeById(Integer id) {
         return eployeeMap.get(id);
+    }
+
+    public void updateEmp(Employee employee) {
+        employee.setDepartment(departmentDao.getDepartmentById(employee.getDepartment().getId()));
+        eployeeMap.put(employee.getId(),employee);
+    }
+
+    public void deleteEmp(Integer id) {
+        eployeeMap.remove(id);
     }
 }

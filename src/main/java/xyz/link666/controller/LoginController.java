@@ -29,4 +29,10 @@ public class LoginController {
         model.addAttribute("msg","用户名或密码错误，登录失败");
         return "index";
     }
+
+    @RequestMapping("logout")
+    public String logout(HttpSession session){
+        session.invalidate();
+        return "redirect:/index.html";
+    }
 }
