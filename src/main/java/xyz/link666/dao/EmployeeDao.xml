@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="xyz.link666.dao.EmployeeDao">
+    <insert id="insertEmployee"></insert>
+    <update id="updateEmp"></update>
+    <delete id="deleteEmp"></delete>
+
+    <select id="selectAllEmployees" resultMap="EmployeeMap">
+    select * from employee
+  </select>
+    <resultMap id="EmployeeMap" type="Employee">
+    <!--复杂的属性，我们需要单独处理对象:association集合:collection-->
+    <association property="department" column="department_id" javaType="Department" select="selectDepartment"/>
+</resultMap>
+<select id="selectDepartment" resultType="Department">
+    select * from department where id = #{department_id}
+</select>
+    <select id="selectEmployeeById" resultType="xyz.link666.pojo.Employee"></select>
+
+    <!--<insert id="insertStudent">-->
+    <!--    insert into student(name, age, score) values (#{name},#{age},#{score})-->
+    <!--</insert>-->
+</mapper>

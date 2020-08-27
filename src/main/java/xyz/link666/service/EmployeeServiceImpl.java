@@ -3,9 +3,11 @@ package xyz.link666.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import xyz.link666.dao.EmployeeDao;
+import xyz.link666.dao.EmployeeDao2;
 import xyz.link666.pojo.Employee;
 
 import java.util.Collection;
+import java.util.List;
 
 /**
  * Created by IDEA.
@@ -21,7 +23,7 @@ public class EmployeeServiceImpl implements EmployeeService {
 
 
     @Override
-    public Collection<Employee> getAllEmployees() {
+    public List<Employee> getAllEmployees() {
         return employeeDao.selectAllEmployees();
     }
 

@@ -3,6 +3,7 @@ package xyz.link666.service;
 import xyz.link666.pojo.Employee;
 
 import java.util.Collection;
+import java.util.List;
 
 /**
  * Created by IDEA.
@@ -12,7 +13,7 @@ import java.util.Collection;
  */
 
 public interface EmployeeService {
-    Collection<Employee> getAllEmployees();
+    List<Employee> getAllEmployees();
 
     void addEmployee(Employee employee);
 

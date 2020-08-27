@@ -3,3 +3,15 @@ spring:
     cache: false
   messages:
     basename: i18n.login
+
+  datasource:
+    #四要素
+    username: root
+    password: 12316
+    url: jdbc:mysql:///springboot-web?serverTimezone=UTC&useUnicode=true&characterEncoding=utf-8
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    # 自定义数据源
+    type: com.alibaba.druid.pool.DruidDataSource
+mybatis:
+  type-aliases-package: xyz.link666.pojo
+#  mapper-locations: classpath*:xyz/link666/dao/*.xml

@@ -32,6 +32,7 @@ public class LoginController {
 
     @RequestMapping("logout")
     public String logout(HttpSession session){
+        //使当前session无效，该方法等于调用session对象中的destroy方法
         session.invalidate();
         return "redirect:/index.html";
     }
