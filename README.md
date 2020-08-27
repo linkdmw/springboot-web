@@ -9,14 +9,16 @@
 -   MySQL 8.0
 -   Shiro
 -   Swagger
--   i18n
 
 ### 日志
 
 2020.8.27
-
 ```
-项目审查
+检查项目
+目前已完成登录+拦截器实现
+使用hashmap伪造数据完成基本的增删改查
+前端界面整合thymeleaf与bootstrap
+登录界面国际化（i18n）
 ```
 
 
