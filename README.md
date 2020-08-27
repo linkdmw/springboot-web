@@ -22,6 +22,6 @@
 登录界面国际化（i18n）
 ```
 `后期目标`
--   [ ] 整合druid数据源，连接mysql
+-   [x] 整合druid数据源，连接mysql
 -   [ ] 整合shiro完成授权与认证
 -   [ ] 整合Swagger
