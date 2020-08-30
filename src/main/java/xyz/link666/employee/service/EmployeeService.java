@@ -1,4 +1,4 @@
-package xyz.link666.service;
+package xyz.link666.employee.service;
 
 import xyz.link666.pojo.Employee;
 

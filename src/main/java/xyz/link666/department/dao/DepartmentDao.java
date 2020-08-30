@@ -1,4 +1,4 @@
-package xyz.link666.dao;
+package xyz.link666.department.dao;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;

@@ -1,11 +1,11 @@
-package xyz.link666.controller;
+package xyz.link666.department.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import xyz.link666.pojo.Department;
-import xyz.link666.service.DepartmentService;
+import xyz.link666.department.service.DepartmentService;
 
 import java.util.Collection;
 

@@ -1,11 +1,7 @@
 package xyz.link666.config;
 
-import com.sun.corba.se.spi.resolver.LocalResolver;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.util.StringUtils;
 import org.springframework.web.servlet.LocaleResolver;
-import xyz.link666.dao.DepartmentDao;
-import xyz.link666.pojo.Department;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;

@@ -1,10 +1,12 @@
-package xyz.link666.controller;
+package xyz.link666.user.controller;
 
-import org.springframework.http.HttpRequest;
+import io.swagger.annotations.Api;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import xyz.link666.pojo.User;
+import xyz.link666.user.service.UserService;
 
 import javax.servlet.http.HttpSession;
 
@@ -14,16 +16,20 @@ import javax.servlet.http.HttpSession;
  * @Author: huo
  * @Date: 2020/8/8 21:35
  */
+@Api(tags = "用户模块控制器类")
 @Controller
-public class LoginController {
+public class UserController {
+
+    @Autowired
+    UserService uSerService;
 
     @RequestMapping("/user/login")
-    public String login(String username,
-                        String password,
+    public String login(User user,
                         Model model,
                         HttpSession session) {
-        if (username != null && "666".equals(password)) {
-            session.setAttribute("loginUser",username);
+        User loginUser = uSerService.userLogin(user);
+        if (loginUser != null) {
+            session.setAttribute("loginUser",loginUser);
             return "redirect:/main.html";
         }
         model.addAttribute("msg","用户名或密码错误，登录失败");

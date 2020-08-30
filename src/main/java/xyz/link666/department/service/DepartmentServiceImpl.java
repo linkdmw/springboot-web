@@ -1,8 +1,8 @@
-package xyz.link666.service;
+package xyz.link666.department.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import xyz.link666.dao.DepartmentDao;
+import xyz.link666.department.dao.DepartmentDao;
 import xyz.link666.pojo.Department;
 
 import java.util.Collection;

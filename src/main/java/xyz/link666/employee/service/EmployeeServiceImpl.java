@@ -1,12 +1,11 @@
-package xyz.link666.service;
+package xyz.link666.employee.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import xyz.link666.dao.EmployeeDao;
-import xyz.link666.dao.EmployeeDao2;
+import xyz.link666.employee.dao.EmployeeDao;
+import xyz.link666.employee.service.EmployeeService;
 import xyz.link666.pojo.Employee;
 
-import java.util.Collection;
 import java.util.List;
 
 /**

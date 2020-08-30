@@ -1,4 +1,4 @@
-package xyz.link666.controller;
+package xyz.link666.employee.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -6,8 +6,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import xyz.link666.pojo.Department;
 import xyz.link666.pojo.Employee;
-import xyz.link666.service.DepartmentService;
-import xyz.link666.service.EmployeeService;
+import xyz.link666.department.service.DepartmentService;
+import xyz.link666.employee.service.EmployeeService;
 
 import java.util.Collection;
 
@@ -38,8 +38,8 @@ public class EmployeeController {
     }
 
     /**
-     * @param id
-     * @param model
+     * @param id 员工id
+     * @param model model
      * @return 跳转到更新页面
      */
     @GetMapping("toUpdateEmp/{id}")
