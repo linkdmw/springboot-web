@@ -23,8 +23,8 @@
 ```
 `后期目标`
 -   [x] 整合druid数据源，连接mysql
--   [ ] 整合shiro完成授权与认证
--   [ ] 整合Swagger
+-   [x] 整合shiro完成授权与认证
+-   [x] 整合Swagger
 
 <u>2020.8.29   8:13</u>
 ```
@@ -32,4 +32,8 @@
 考虑到开发顺序，因此决定先整合swagger再完善后面的增删改查项目
 整合swagger之前使用log4j+slf2j失败，出现了兼容错误；因此改回sringboot默认的logback日志系统
 今天目标：整合swagger，完成原有增删改查改用mybatis（原开发时使用hashmap伪造数据，没有实现dao层），整合shiro
+```
+<u>2020-9-3 01:31:42</u>
+```
+基本功能已按预期完成
 ```
