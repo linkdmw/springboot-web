@@ -7,8 +7,18 @@
         insert into employee(name, email, gender, birthday, department_id)
         values (#{name},#{email},#{gender},#{birthday},#{department.id})
     </insert>
-    <update id="updateEmp"></update>
-    <delete id="deleteEmp"></delete>
+    <update id="updateEmp">
+        update employee set name = #{employee.name},
+                            email = #{employee.email},
+                            gender = #{employee.gender},
+                            birthday = #{employee.birthday},
+                            department_id = #{employee.department_id}
+        where id = #{employee.id}
+    </update>
+
+    <delete id="deleteEmpById">
+        delete from employee where id = #{id}
+    </delete>
 
     <select id="selectAllEmployees" resultMap="EmployeeMap">
     select * from employee
@@ -20,7 +30,9 @@
 <select id="selectDepartment" resultType="Department">
     select * from department where id = #{department_id}
 </select>
-    <select id="selectEmployeeById" resultType="xyz.link666.pojo.Employee"></select>
+    <select id="selectEmployeeById" resultType="xyz.link666.pojo.Employee">
+        select * from employee where id = #{id}
+    </select>
     <!--<insert id="insertStudent">-->
     <!--    insert into student(name, age, score) values (#{name},#{age},#{score})-->
     <!--</insert>-->

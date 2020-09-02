@@ -1,5 +1,6 @@
 package xyz.link666.pojo;
 
+import io.swagger.models.auth.In;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -19,6 +20,7 @@ public class Employee {
     private String email;
     private Integer gender;
     private Date birthday;
+    private Integer department_id;
     //关联属性
     private Department department;
 

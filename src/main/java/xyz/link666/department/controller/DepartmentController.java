@@ -8,6 +8,7 @@ import xyz.link666.pojo.Department;
 import xyz.link666.department.service.DepartmentService;
 
 import java.util.Collection;
+import java.util.List;
 
 /**
  * Created by IDEA.
@@ -22,7 +23,7 @@ public class DepartmentController {
 
     @RequestMapping("getAllDepartment")
     public String getAllDepartment(Model model){
-        Collection<Department> departments = departmentService.getAllDepartment();
+        List<Department> departments = departmentService.getAllDepartment();
         model.addAttribute("departments",departments);
         return "addList";
     }

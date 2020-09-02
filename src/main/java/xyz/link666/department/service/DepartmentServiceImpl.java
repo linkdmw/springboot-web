@@ -6,6 +6,7 @@ import xyz.link666.department.dao.DepartmentDao;
 import xyz.link666.pojo.Department;
 
 import java.util.Collection;
+import java.util.List;
 
 /**
  * Created by IDEA.
@@ -18,7 +19,7 @@ public class DepartmentServiceImpl implements DepartmentService {
     @Autowired
     DepartmentDao departmentDao;
     @Override
-    public Collection<Department> getAllDepartment() {
+    public List<Department> getAllDepartment() {
         return departmentDao.selectAllDepartment();
     }
 }

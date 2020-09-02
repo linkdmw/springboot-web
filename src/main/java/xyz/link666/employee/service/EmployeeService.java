@@ -21,5 +21,6 @@ public interface EmployeeService {
 
     void updateEmp(Employee employee);
 
-    void deleteEmp(Integer id);
+
+    void deleteEmpById(Integer id);
 }

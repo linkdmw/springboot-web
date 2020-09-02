@@ -1,6 +1,7 @@
 package xyz.link666.employee.dao;
 
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 import xyz.link666.pojo.Employee;
 
@@ -39,11 +40,12 @@ public interface EmployeeDao {
      * 更新员工信息
      * @param employee 更新后员工
      */
-    void updateEmp(Employee employee);
+    void updateEmp(@Param("employee") Employee employee);
 
     /**
      * 按id删除员工
      * @param id 员工id
      */
-    void deleteEmp(Integer id);
+    void deleteEmpById(Integer id);
+
 }
