@@ -41,7 +41,7 @@ public class SwaggerConfig {
                 .enable(swaggerEnabled)
                 .apiInfo(apiInfo())
                 .select()
-                .apis(RequestHandlerSelectors.basePackage("xyz.link666"))
+                .apis(RequestHandlerSelectors.any())
                 //.paths(PathSelectors.ant("/log**"))
                 .build()
                 .groupName("master")

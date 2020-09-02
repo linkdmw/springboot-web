@@ -11,6 +11,7 @@ import java.util.Date;
  * @Date: 2020/8/4 18:31
  */
 @Data
+@AllArgsConstructor
 @NoArgsConstructor
 public class Employee {
     private String name;
@@ -21,12 +22,4 @@ public class Employee {
     //关联属性
     private Department department;
 
-    public Employee(String name, Integer id, String email, Integer gender,Date date,Department department) {
-        this.name = name;
-        this.id = id;
-        this.email = email;
-        this.gender = gender;
-        this.birthday = date;
-        this.department = department;
-    }
 }

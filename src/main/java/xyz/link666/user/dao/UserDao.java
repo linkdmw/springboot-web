@@ -15,4 +15,6 @@ import xyz.link666.pojo.User;
 public interface UserDao {
 
     User selectUserByLoginUser(User user);
+
+    User selectUserByUsername(String username);
 }

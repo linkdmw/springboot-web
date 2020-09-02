@@ -68,12 +68,6 @@
 			<version>1.1.22</version>
 		</dependency>
 
-		<!--&lt;!&ndash; Log4j &ndash;&gt;-->
-		<!--<dependency>-->
-		<!--	<groupId>log4j</groupId>-->
-		<!--	<artifactId>log4j</artifactId>-->
-		<!--	<version>1.2.17</version>-->
-		<!--</dependency>-->
 
 		<!--swagger依赖-->
 		<dependency>
@@ -85,6 +79,19 @@
 			<groupId>io.springfox</groupId>
 			<artifactId>springfox-swagger-ui</artifactId>
 			<version>2.9.2</version>
+		</dependency>
+
+		<!--shiro整合springboot-->
+		<dependency>
+			<groupId>org.apache.shiro</groupId>
+			<artifactId>shiro-spring-boot-web-starter</artifactId>
+			<version>1.5.3</version>
+		</dependency>
+		<!-- thymeleaf整合shiro依赖 -->
+		<dependency>
+			<groupId>com.github.theborakompanioni</groupId>
+			<artifactId>thymeleaf-extras-shiro</artifactId>
+			<version>2.0.0</version>
 		</dependency>
 	</dependencies>
 
