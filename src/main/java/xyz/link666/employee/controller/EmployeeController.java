@@ -11,9 +11,7 @@ import xyz.link666.pojo.Employee;
 import xyz.link666.department.service.DepartmentService;
 import xyz.link666.employee.service.EmployeeService;
 
-import java.util.Collection;
 import java.util.List;
-import java.util.logging.Logger;
 
 /**
  * Created by IDEA.
@@ -37,7 +35,9 @@ public class EmployeeController {
     @ApiOperation(value = "查询全部员工")
     @RequestMapping("/emp/getAllEmployees")
     public String getAllEmployees(Model model) {
-        model.addAttribute("emps",employeeService.getAllEmployees());
+        List<Employee> employeeList = employeeService.getAllEmployees();
+        model.addAttribute("emps",employeeList);
+        System.out.println("全部员工："+employeeList);
         return "list";
     }
 
@@ -74,6 +74,8 @@ public class EmployeeController {
     @ApiOperation(value = "更新员工")
     @PostMapping("updateEmp")
     public String updateEmp(Employee employee){
+        System.out.println("更新"+employee);
+
         employeeService.updateEmp(employee);
         return  "redirect:/emp/getAllEmployees";
     }

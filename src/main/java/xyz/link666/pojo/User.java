@@ -4,6 +4,8 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 
+import java.io.Serializable;
+
 /**
  * Created by IDEA.
  *
@@ -12,7 +14,7 @@ import lombok.Data;
  */
 @ApiModel(value = "user对象",description = "用于登录的用户对象")
 @Data
-public class User {
+public class User implements Serializable {
 
     @ApiModelProperty(value = "用户名")
     private String username;

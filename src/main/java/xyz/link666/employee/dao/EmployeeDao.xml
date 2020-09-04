@@ -24,6 +24,7 @@
     select * from employee
   </select>
     <resultMap id="EmployeeMap" type="Employee">
+        <result column="department_id" property="department_id"/>
     <!--复杂的属性，我们需要单独处理对象:association集合:collection-->
     <association property="department" column="department_id" javaType="Department" select="selectDepartment"/>
 </resultMap>

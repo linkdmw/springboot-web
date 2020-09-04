@@ -17,9 +17,8 @@ public class MvcConfig implements WebMvcConfigurer {
 
     @Override
     public void addViewControllers(ViewControllerRegistry registry) {
-        registry.addViewController("/").setViewName("index");
+        registry.addViewController("/").setViewName("dashboard");
         registry.addViewController("/index.html").setViewName("index");
-        registry.addViewController("/404.html").setViewName("404");
         registry.addViewController("/main.html").setViewName("dashboard");
         registry.addViewController("/addList.html").setViewName("addList");
     }
@@ -28,6 +27,18 @@ public class MvcConfig implements WebMvcConfigurer {
     @Bean
     public LocaleResolver localeResolver(){
         return new LocaleResolverConfig();
+    }
+
+    @Override
+    public void addInterceptors(InterceptorRegistry registry) {
+        registry.addInterceptor(new MyIntercepter())
+                .addPathPatterns("/**");
+                //.excludePathPatterns("/")
+                //.excludePathPatterns("/index.html")
+                //.excludePathPatterns("/user/login")
+                //.excludePathPatterns("/css/**")
+                //.excludePathPatterns("/js/**")
+                //.excludePathPatterns("/img/**");
     }
 
 }
